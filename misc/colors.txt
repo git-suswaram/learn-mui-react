@@ -1,0 +1,37 @@
+boderLeft: '6px solid #ae1e23'
+borderTop: 2px solid #606265
+borderBottom: 2px solid #e8b91f (gold)
+darkGrey: #44464a
+mediumGrey: #696b6e
+veryLightGrey: #e6e6e6
+
+backgroundColor: #494b50
+
+
+https://www.designwizard.com/blog/design-trends/colour-combination
+#D7C49EFF
+#343148FF
+
+
+=======================
+https://bootswatch.com/darkly/
+
+Paper backgroundColor - #e9ecef
+
+NavBar
+Option 1 - #375a7f (Select)
+Option 2 - #444
+Option 3 - #adb5bd
+
+Primary - #375a7f
+Secondary - #444
+Success - #00bc8c
+Info - #3498db
+Warning - #cf850f
+Danger - #e74c3c
+Light - #adb5bd
+Dark - #303030
+
+Pagination - #444
+
+https://bootswatch.com/slate/
