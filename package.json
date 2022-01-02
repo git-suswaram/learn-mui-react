@@ -1,0 +1,37 @@
+{
+	"name": "learn-mui-react",
+	"version": "1.0.0",
+	"description": "learn mui",
+	"type": "module",
+	"main": "server.js",
+	"author": "Sreedhar Suswaram",
+	"license": "ISC",
+	"scripts": {
+		"start": "node backend/server",
+		"server": "nodemon backend/server",
+		"client": "npm start --prefix frontend",
+		"dev": "concurrently \"npm run server\" \"npm run client\""
+	},
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.19.1",
+		"colors": "^1.4.0",
+		"crypto": "^1.0.1",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.2",
+		"express-async-handler": "^1.2.0",
+		"joi": "^17.5.0"
+	},
+	"devDependencies": {
+		"concurrently": "^6.5.1",
+		"nodemon": "^2.0.15"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/git-suswaram/learn-mui-react.git"
+	},
+	"bugs": {
+		"url": "https://github.com/git-suswaram/learn-mui-react/issues"
+	},
+	"homepage": "https://github.com/git-suswaram/learn-mui-react#readme"
+}

@@ -1,0 +1,13 @@
+
+### read all accounts
+GET  http://localhost:5500/api/read
+
+
+### read specific account information
+POST http://localhost:5500/api/read
+Content-Type: application/json
+
+{
+  "field1": "xyz",
+  "field2": "abc"
+}
