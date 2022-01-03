@@ -1,6 +1,8 @@
 import { createTheme } from '@mui/material';
 
+const theme = createTheme();
 const customTheme = createTheme({
+	...theme,
 	palette: {
 		primary: {
 			main: '#375a7f',
@@ -8,6 +10,10 @@ const customTheme = createTheme({
 		},
 		secondary: {
 			main: '#444',
+		},
+		background: {
+			default: '#e9ecef',
+			paper: '#e9ecef',
 		},
 	},
 	shape: {
@@ -25,8 +31,8 @@ const customTheme = createTheme({
 		},
 	},
 	props: {
-		MuiIconButton: {
-			// disableRipple: 'true',
+		MuiButtonBase: {
+			disableRipple: true,
 		},
 	},
 });

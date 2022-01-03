@@ -6,3 +6,11 @@ Mockaroo - generated nested JSON objects
 
 JSS integration with React
 https://cssinjs.org/react-jss/?v=v10.9.0
+
+Pseudo and Nested Selectors (Using &, $ in JSS)
+https://cssinjs.org/jss-plugin-nested/?v=v10.3.0
+
+
+
+Disable ripple animation
+https://github.com/mui-org/material-ui/issues/240

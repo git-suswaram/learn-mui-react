@@ -46,6 +46,7 @@ const ResponsiveAppBar = () => {
 						noWrap
 						component='div'
 						sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+						color='success'
 					>
 						LOGO
 					</Typography>
