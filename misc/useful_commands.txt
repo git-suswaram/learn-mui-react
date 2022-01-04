@@ -1,0 +1,3 @@
+
+Run JSON Server
+	npx json-server --watch frontend/data/employee.json --port 8000

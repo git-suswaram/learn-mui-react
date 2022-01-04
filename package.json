@@ -9,8 +9,9 @@
 	"scripts": {
 		"start": "node backend/server",
 		"server": "nodemon backend/server",
+		"testData": "npx json-server --watch frontend/test/data/empDept.json --port 8000",
 		"client": "npm start --prefix frontend",
-		"dev": "concurrently \"npm run server\" \"npm run client\""
+		"dev": "concurrently \"npm run testData\" \"npm run client\""
 	},
 	"dependencies": {
 		"bcryptjs": "^2.4.3",

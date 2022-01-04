@@ -1,12 +1,26 @@
 import React from 'react';
-import Search from '../components/Search/Search';
-import ScreenName from '../controls/ScreenName';
+import { Paper } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+
+import SampleForm from './sampleForm';
+import ScreenName from '../components/controls/ScreenName';
+
+const useStyles = makeStyles((theme) => ({
+	pageContent: {
+		borderRadius: '15px',
+		margin: `${theme.spacing(1)} 0px`,
+		padding: theme.spacing(3),
+	},
+}));
 
 const HomePage = () => {
+	const classes = useStyles();
 	return (
 		<React.Fragment>
 			<ScreenName name='Accounts Listing' />
-			<Search />
+			<Paper className={classes.pageContent}>
+				<SampleForm />
+			</Paper>
 		</React.Fragment>
 	);
 };

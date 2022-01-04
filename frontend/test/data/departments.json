@@ -1,0 +1,14 @@
+{
+	"departments": [
+		{ "id": 1, "department": "Accounting" },
+		{ "id": 2, "department": "Marketing" },
+		{ "id": 3, "department": "Support" },
+		{ "id": 4, "department": "Legal" },
+		{ "id": 5, "department": "Training" },
+		{ "id": 6, "department": "Human Resources" },
+		{ "id": 7, "department": "Sales" },
+		{ "id": 8, "department": "Business Development" },
+		{ "id": 9, "department": "Research and Development" },
+		{ "id": 10, "department": "Engineering" }
+	]
+}
