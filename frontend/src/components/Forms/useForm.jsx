@@ -5,7 +5,7 @@ import useStyles from './FormStyles';
 const useForm = (initialFormState, validateOnChange = false, validate) => {
 	const [values, setValues] = useState(initialFormState);
 
-	const [errors, setErrors] = useState(initialFormState);
+	const [errors, setErrors] = useState({});
 
 	const handleInputChange = (e) => {
 		const { name, value } = e.target;

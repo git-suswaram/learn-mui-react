@@ -1,1 +1,1 @@
-GET http://localhost:8001/departments
+GET http://localhost:8000/departments

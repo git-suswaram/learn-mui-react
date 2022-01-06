@@ -1,8 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Grid } from '@mui/material';
+import { Grid, Paper, Stack } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+
 import { Form, useForm } from '../components/Forms/useForm';
 import Controls from '../components/controls';
-import { read } from '../api/api';
+import { add, read } from '../api/api';
+
+const useStyles = makeStyles((theme) => ({
+	pageContent: {
+		borderRadius: '15px',
+		margin: `${theme.spacing(1)} 0px`,
+		padding: theme.spacing(3),
+	},
+}));
 
 const genderItems = [
 	{ id: 'male', title: 'Male' },
@@ -59,90 +69,102 @@ const SampleForm = () => {
 			return Object.values(temp).every((x) => x === '');
 	};
 
-	const { values, handleInputChange, errors, setErrors, resetForm } = useForm(
-		initialFormState,
-		true,
-		validate
-	);
+	const { values, setValues, handleInputChange, errors, setErrors, resetForm } =
+		useForm(initialFormState, true, validate);
+
+	const insertEmployees = async (body, headers = null) => {
+		const response = await add('http://localhost:8000/employees', body);
+		if (response.status === 201) {
+			setValues(initialFormState);
+			window.alert('Employee is added successfully');
+		}
+	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (validate()) window.alert('Submit clicked');
+		setErrors({});
+		if (validate()) insertEmployees(values);
 	};
+
+	const classes = useStyles();
 
 	return (
 		<React.Fragment>
-			<Form onSubmit={handleSubmit}>
-				<Grid container>
-					<Grid item xs={6}>
-						<Controls.Input
-							label='Full Name'
-							name='fullName'
-							value={values.fullName}
-							onChange={handleInputChange}
-							error={errors.fullName}
-						/>
-						<Controls.Input
-							label='Email'
-							name='email'
-							value={values.email}
-							onChange={handleInputChange}
-							error={errors.email}
-						/>
-						<Controls.Input
-							label='Mobile'
-							name='mobile'
-							value={values.mobile}
-							onChange={handleInputChange}
-							error={errors.mobile}
-						/>
-						<Controls.Input
-							label='City'
-							name='city'
-							value={values.city}
-							onChange={handleInputChange}
-							error={errors.city}
-						/>
-					</Grid>
-					<Grid item xs={6}>
-						<Controls.RadioGroup
-							name='gender'
-							label='Gender'
-							value={values.gender}
-							onChange={handleInputChange}
-							items={genderItems}
-						/>
-						<Controls.Select
-							name='departmentId'
-							label='Department'
-							value={values.departmentId}
-							onChange={handleInputChange}
-							options={departments}
-							error={errors.departmentId}
-						/>
-						<Controls.DatePicker
-							label='Hiring Date'
-							name='hireDate'
-							value={values.hireDate}
-							onChange={handleInputChange}
-						/>
-						<Controls.Checkbox
-							label='Permanent Employee'
-							name='isPermanent'
-							value={values.isPermanent}
-							onChange={handleInputChange}
-						/>
-						<div>
-							<Controls.Button text='Submit' type='submit' />
+			<Paper className={classes.pageContent}>
+				<Form onSubmit={handleSubmit}>
+					<Stack>
+						<Grid container>
+							<Grid item xs={6}>
+								<Controls.Input
+									label='Full Name'
+									name='fullName'
+									value={values.fullName}
+									onChange={handleInputChange}
+									error={errors.fullName}
+								/>
+								<Controls.Input
+									label='Email'
+									name='email'
+									value={values.email}
+									onChange={handleInputChange}
+									error={errors.email}
+								/>
+								<Controls.Input
+									label='Mobile'
+									name='mobile'
+									value={values.mobile}
+									onChange={handleInputChange}
+									error={errors.mobile}
+								/>
+								<Controls.Input
+									label='City'
+									name='city'
+									value={values.city}
+									onChange={handleInputChange}
+									error={errors.city}
+								/>
+							</Grid>
+							<Grid item xs={6}>
+								<Controls.RadioGroup
+									name='gender'
+									label='Gender'
+									value={values.gender}
+									onChange={handleInputChange}
+									items={genderItems}
+								/>
+								<Controls.Select
+									name='departmentId'
+									label='Department'
+									value={values.departmentId}
+									onChange={handleInputChange}
+									options={departments}
+									error={errors.departmentId}
+								/>
+								<Controls.DatePicker
+									label='Hiring Date'
+									name='hireDate'
+									value={values.hireDate}
+									onChange={handleInputChange}
+								/>
+								<Controls.Checkbox
+									label='Permanent Employee'
+									name='isPermanent'
+									value={values.isPermanent}
+									onChange={handleInputChange}
+								/>
+							</Grid>
+						</Grid>
+						<Stack direction='row' justifyContent='end'>
 							<Controls.Button
 								text='Reset'
 								color='inherit'
 								onClick={resetForm}
 							/>
-						</div>
-					</Grid>
-				</Grid>
-			</Form>
+							<Controls.Button text='Submit' type='submit' />
+						</Stack>
+					</Stack>
+				</Form>
+			</Paper>
 		</React.Fragment>
 	);
 };

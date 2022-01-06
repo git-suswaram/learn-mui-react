@@ -12,7 +12,11 @@ const read = async (baseUrl, URI = '/') => {
 	return response;
 };
 
-const add = () => {};
+const add = async (baseUrl, body, URI = '/') => {
+	const api = createApi(baseUrl);
+	const response = await api.post(URI, body);
+	return response;
+};
 const remove = () => {};
 
 export { read, add, remove };

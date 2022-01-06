@@ -1,10 +1,10 @@
 import React from 'react';
 import { CssBaseline, Paper, Container } from '@mui/material';
 import { ThemeProvider } from '@mui/styles';
-import customTheme from './styles/customTheme';
+import customTheme from '.././styles/customTheme';
+import TopNavigationBar from '.././components/Navigation/TopNavigationBar';
+import MyLearning from '../MyLearning';
 import './App.css';
-import TopNavigationBar from './components/Navigation/TopNavigationBar';
-import HomePage from './screens/homePage';
 
 const useStyles = {
 	minHeight: '100vh',
@@ -17,7 +17,7 @@ const useStyles = {
 	backgroundAttachment: 'fixed',
 };
 
-function App() {
+function App(props) {
 	return (
 		<React.Fragment>
 			<CssBaseline />
@@ -25,7 +25,7 @@ function App() {
 				<Paper sx={useStyles}>
 					<Container maxWidth='lg'>
 						<TopNavigationBar />
-						<HomePage />
+						<MyLearning>{props.children}</MyLearning>
 					</Container>
 				</Paper>
 			</ThemeProvider>
