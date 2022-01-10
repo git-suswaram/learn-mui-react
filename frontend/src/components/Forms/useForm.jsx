@@ -32,7 +32,7 @@ const useForm = (initialFormState, validateOnChange = false, validate) => {
 	};
 };
 
-export default function Form(props) {
+const Form = (props) => {
 	const classes = useStyles();
 	const { children, ...others } = props;
 
@@ -46,6 +46,6 @@ export default function Form(props) {
 			{children}
 		</Box>
 	);
-}
+};
 
 export { Form, useForm };

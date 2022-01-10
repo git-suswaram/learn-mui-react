@@ -1341,41 +1341,6 @@
 			"departmentId": 8,
 			"hireDate": "2021-05-24T22:25:17Z",
 			"isPermanent": false
-		},
-		{
-			"id": 201,
-			"firstName": "Sreedhar",
-			"lastName": "suswaram",
-			"fullName": "Sreedhar Suswaram",
-			"email": "suswaram@hao123.com",
-			"mobile": "9012837338",
-			"city": "Hyderabad",
-			"gender": "Male",
-			"departmentId": 10,
-			"hireDate": "2022-01-04T16:39:46.616Z",
-			"isPermanent": true
-		},
-		{
-			"id": 202,
-			"fullName": "S Raghavendra",
-			"email": "srvhmt@gmail.com",
-			"mobile": "9012837338",
-			"city": "Hyderabad",
-			"gender": "male",
-			"departmentId": 10,
-			"hireDate": "2022-01-04T16:39:46.616Z",
-			"isPermanent": true
-		},
-		{
-			"id": 203,
-			"fullName": "S.R.VijayaLakshmi",
-			"email": "ravisreesu@gmail.com",
-			"mobile": "9012837338",
-			"city": "Hyderabad",
-			"gender": "female",
-			"departmentId": 6,
-			"hireDate": "2022-01-04T16:48:04.437Z",
-			"isPermanent": true
 		}
 	]
 }
