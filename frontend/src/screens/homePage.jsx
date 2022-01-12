@@ -1,16 +1,14 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { Stack } from '@mui/material';
-// import SampleForm from './sampleForm';
-import ScreenName from '../components/controls/ScreenName';
 import SampleTable from './sampleTable';
-import AddNewPopup from './sampleAddEditDialog';
 
 const HomePage = () => {
 	return (
 		<Stack>
-			<ScreenName name='Accounts Listing' />
-			<AddNewPopup />
-			<SampleTable />
+			<Routes>
+				<Route path='/' exact element={<SampleTable />} />
+			</Routes>
 		</Stack>
 	);
 };

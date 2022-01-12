@@ -14,9 +14,7 @@ const customTheme = createTheme({
 			paper: '#e9ecef',
 		},
 	},
-	shape: {
-		borderRadius: '15px 15px',
-	},
+
 	typography: {
 		fontFamily: ['Quicksand', 'Genos', 'Lobster Two', 'Caveat'].join(','),
 		fontSize: 16,

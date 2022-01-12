@@ -33,6 +33,8 @@ const initialFormState = {
 };
 
 const SampleForm = () => {
+	const classes = useStyles();
+
 	const [departments, setDepartments] = useState([]);
 
 	useEffect(() => {
@@ -69,9 +71,6 @@ const SampleForm = () => {
 			return Object.values(temp).every((x) => x === '');
 	};
 
-	const { values, setValues, handleInputChange, errors, setErrors, resetForm } =
-		useForm(initialFormState, true, validate);
-
 	const insertEmployees = async (body, headers = null) => {
 		const response = await add('http://localhost:8000/employees', body);
 		if (response.status === 201) {
@@ -86,7 +85,8 @@ const SampleForm = () => {
 		if (validate()) insertEmployees(values);
 	};
 
-	const classes = useStyles();
+	const { values, setValues, handleInputChange, errors, setErrors, resetForm } =
+		useForm(initialFormState, true, validate);
 
 	return (
 		<React.Fragment>

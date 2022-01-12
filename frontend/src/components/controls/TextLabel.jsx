@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Paper, Typography, Box } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 const useStlyes = makeStyles((theme) => ({
@@ -20,17 +20,13 @@ const useStlyes = makeStyles((theme) => ({
 	},
 }));
 
-const ScreenName = (props) => {
+const TextLabel = (props) => {
 	const classes = useStlyes();
 	return (
 		<Box>
-			<Grid container rowSpacing={2}>
-				<Paper elevation={0} className={classes.paper}>
-					<Typography className={classes.typography}>{props.name}</Typography>
-				</Paper>
-			</Grid>
+			<Typography className={classes.typography}>{props.name}</Typography>
 		</Box>
 	);
 };
 
-export default ScreenName;
+export default TextLabel;

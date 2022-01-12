@@ -6,6 +6,7 @@ import DatePicker from './DatePicker';
 import Button from './Button';
 import Popup from './Popup';
 import ActionButton from './ActionButton';
+import TextLabel from './TextLabel';
 
 const Controls = {
 	Input,
@@ -16,6 +17,7 @@ const Controls = {
 	Button,
 	Popup,
 	ActionButton,
+	TextLabel,
 };
 
 export default Controls;
