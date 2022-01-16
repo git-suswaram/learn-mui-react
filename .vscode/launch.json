@@ -12,6 +12,18 @@
 			}
 		},
 		{
+			"name": "Brave",
+			"type": "chrome",
+			"request": "launch",
+			"runtimeExecutable": "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
+			// "userDataDir": true,
+			"url": "http://localhost:3000",
+			"webRoot": "${workspaceRoot}/src",
+			"sourceMapPathOverrides": {
+				"webpack:///src/*": "${webRoot}/*"
+			}
+		},
+		{
 			"name": "Debug CRA Tests",
 			"type": "node",
 			"request": "launch",

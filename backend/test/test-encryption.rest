@@ -1,0 +1,23 @@
+### hash data
+POST http://localhost:5500/api/encryption/hash
+Content-Type: application/json
+
+{
+  "data": "50300316536288"
+}
+
+### encrypt data
+POST http://localhost:5500/api/encryption/encrypt
+Content-Type: application/json
+
+{
+  "data": "50300316536288"
+}
+
+### decrypt data
+POST http://localhost:5500/api/encryption/decrypt
+Content-Type: application/json
+
+{
+  "data": "19f5a32a57a6007e6e42cd3b6b00d94a:5c6807ed330f38866f39441857e4be69"
+}

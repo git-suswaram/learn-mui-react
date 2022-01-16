@@ -1,0 +1,14 @@
+
+### read all accounts
+GET  http://localhost:5500/api/account/read
+
+
+### read specific account information
+POST http://localhost:5500/api/account/read
+Content-Type: application/json
+
+{
+  "accountNumber": "50300316536288",
+  "institutionShortName": "HDFC_DSNR"
+}
+

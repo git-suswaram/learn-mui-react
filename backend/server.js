@@ -2,6 +2,9 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import colors from 'colors';
+import financialInstitutionRoutes from './routes/financialInstitutionRoutes.js';
+import accountRoutes from './routes/accountRoutes.js';
+import encryptionRoutes from './routes/encryptionRoutes.js';
 import { notFound, errorHandler } from './middlewares/errorHandler.js';
 
 dotenv.config();
@@ -17,6 +20,10 @@ app.use(
 app.get('/api', (req, res) => {
 	res.send('API is running...');
 });
+
+app.use('/api/fi', financialInstitutionRoutes);
+app.use('/api/account', accountRoutes);
+app.use('/api/encryption', encryptionRoutes);
 
 app.use('/', notFound);
 app.use(errorHandler);
